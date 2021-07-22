@@ -1,0 +1,45 @@
+.navbar {
+    background-color: transparent !important;
+    margin-right: 3em;
+}
+
+.navbar-menu {
+    margin-top: 2em;
+}
+
+.navbar-item {
+    margin-right: 3em;
+    &:hover {
+        background-color: transparent !important;
+        color: rgb(68, 68, 68);
+    }
+}
+
+div.borderXwidth a:before, div.borderXwidth a:after
+{
+    position: absolute;
+    opacity: 0;
+    width: 0%;
+    height: 3px;
+    content: '';
+    background: rgb(95, 95, 95);
+    transition: all 0.5s;
+}
+
+// div.borderXwidth a:before
+// {
+//     left: 0px;
+//     top: 0px;
+// }
+
+div.borderXwidth a:after
+{
+    right: 0px;
+    bottom: 0px;
+}
+
+ div.borderXwidth a:hover:after
+{
+    opacity: 1;
+    width: 100%;
+}
