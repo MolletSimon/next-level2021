@@ -9,22 +9,38 @@
 
 .inscriptions {
     min-height: 100vh;
-    background: url('../assets/images/background-insc.jpg');
+    background: url('../assets/images/sj-objio-XFWiZTa2Ub0-unsplash.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .programme {
-    height: 100vh;
-    background-color: rgb(53, 53, 53);
+    min-height: 100vh;
+    background: url('../assets/images/kelly-sikkema-8jjQ4hmCOcM-unsplash.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .checklist {
     height: 100vh;
-    background-color: rgb(230, 214, 163);
+    background: url('../assets/images/glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .contact {
     height: 100vh;
-    background-color: rgb(53, 53, 53);
+    background: url('../assets/images/quino-al-4SNUcHPiC8c-unsplash.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 * {

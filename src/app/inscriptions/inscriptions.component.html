@@ -57,7 +57,10 @@ data-aos-anchor-placement="top-center">
                 <label for="name" class="form__label">Mail</label>
             </div>
         </div>
-        <button class="button is-fullwidth is-outlined is-white" style="margin-top: 3rem;" (click)="step2(f)">SUIVANT</button>
+        <div class="next-button">
+            <button (click)="step = step + 1" class="btn-hover color-8">SUIVANT</button>
+        </div>
+        <!-- <button class="button is-fullwidth is-outlined is-white" style="margin-top: 3rem;" (click)="step2(f)">SUIVANT</button> -->
     </ng-container>
 
     <ng-container *ngIf="step === 2" data-aos="fade-in">
@@ -104,8 +107,10 @@ data-aos-anchor-placement="top-center">
             <h5 class="subtitle" style="font-size: 12px;">* : Ne t'inquiète pas, nous t'enverrons quand même la photo avant publication pour que tu valides une seconde fois, il s'agit ici plutôt des photos de groupe</h5>
         </div>
 
-        <button class="button is-white" *ngIf="step > 1" (click)="step = step - 1">PRECEDENT</button>
-        <button class="button is-white" *ngIf="step > 1" (click)="step = step + 1">SUIVANT</button>
+        <div class="next-button">
+            <button (click)="step = step - 1" class="btn-hover color-11">PRÉCÉDENT</button>
+            <button (click)="step = step + 1" class="btn-hover color-8">SUIVANT</button>
+        </div>
     </ng-container>
 
     <ng-container *ngIf="step === 3">
@@ -122,8 +127,11 @@ data-aos-anchor-placement="top-center">
                 <span>Télécharger l'autorisation</span>
               </button>
         </div>
-        <button class="button is-white" *ngIf="step > 1" (click)="step = step - 1">PRECEDENT</button>
-        <button class="button is-primary" *ngIf="step > 1" (click)="step = step + 1">VALIDER</button>
+        <div class="next-button">
+            <button (click)="step = step - 1" class="btn-hover color-11">PRÉCÉDENT</button>
+            <button (click)="step = step + 1" class="btn-hover color-5">VALIDER</button>
+        </div>
+        
     </ng-container>
 
     <!-- BUTTON INSCRIPTION -->
