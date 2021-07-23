@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgAnimateScrollService } from 'ng-animate-scroll';
+
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private animateScrollService: NgAnimateScrollService) { }
 
   ngOnInit(): void {
+  }
+
+  navigateToHeader(id: string) {
+    this.animateScrollService.scrollToElement(id, 500)
   }
 
 }

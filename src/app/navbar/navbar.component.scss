@@ -1,10 +1,16 @@
 .navbar {
     background-color: transparent !important;
     margin-right: 3em;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
 
 .navbar-menu {
     margin-top: 2em;
+    display: flex !important;
 }
 
 .navbar-item {

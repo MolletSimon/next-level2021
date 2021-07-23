@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-inscriptions',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InscriptionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dB: AngularFirestore) { }
 
   ngOnInit(): void {
+  }
+
+  saveForm(f: NgForm) {
+    console.log(f.value);
+    this.dB.collection('inscrits').add({
+      nom: f.value.nom,
+      prenom: f.value.prenom
+    })
   }
 
 }
