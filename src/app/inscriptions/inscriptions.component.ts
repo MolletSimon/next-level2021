@@ -9,6 +9,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class InscriptionsComponent implements OnInit {
 
+  step = 1;
+  public user: any;
   constructor(private dB: AngularFirestore) { }
 
   ngOnInit(): void {
@@ -20,6 +22,11 @@ export class InscriptionsComponent implements OnInit {
       nom: f.value.nom,
       prenom: f.value.prenom
     })
+  }
+
+  step2(f: NgForm) {
+    this.user = f.value;
+    this.step++;
   }
 
 }

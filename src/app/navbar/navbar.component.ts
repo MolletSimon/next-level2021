@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  navigateToHeader(id: string) {
+  navigateTo(id: string) {
     this.animateScrollService.scrollToElement(id, 500)
   }
 

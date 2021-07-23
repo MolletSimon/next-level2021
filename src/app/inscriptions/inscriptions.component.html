@@ -2,30 +2,131 @@
     <h1 class="title">Inscriptions</h1>
 </div>
 
-<form #f="ngForm" (ngSubmit)="saveForm(f)">
-    <div class="field">
-        <label class="label">Nom</label>
-        <div class="control">
-          <input class="input" name="nom" type="text" placeholder="Text input" ngModel>
+<form #f="ngForm" (ngSubmit)="saveForm(f)" data-aos="fade-up"
+data-aos-offset="200"
+data-aos-delay="50"
+data-aos-duration="1000"
+data-aos-easing="ease-in-out"
+data-aos-mirror="true"
+data-aos-once="true"
+data-aos-anchor-placement="top-center">
+    <ng-container *ngIf="step===1" >
+        <div class="tile">
+            <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Nom" name="name" id='name' required ngModel/>
+                <label for="name" class="form__label">Nom</label>
+            </div>
+        
+            <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Prénom" name="prenom" id='prenom' required ngModel/>
+                <label for="name" class="form__label">Prénom</label>
+            </div>
         </div>
-    </div>
-
-    <div class="field">
-        <label class="label">Prénom</label>
-        <div class="control">
-          <input class="input" name="prenom" type="text" placeholder="Text input" ngModel>
+        
+    
+        <div class="form__group field">
+            <input type="date" class="form__field" placeholder="Date de naissance" name="birthdate" id='birthdate' required ngModel/>
+            <label for="name" class="form__label">Date de Naissance</label>
         </div>
-    </div>
-
-    <div class="field">
-        <label class="label">Surnom</label>
-        <div class="control">
-          <input class="input" name="surnom" type="text" placeholder="Text input" ngModel>
+    
+        <div class="form__group field" id="adress">
+            <input type="input" class="form__field" name="adresse" id='adresse' required ngModel/>
+            <label for="name" class="form__label">Adresse</label>
         </div>
-    </div>
+    
+        <div class="tile">
+            <div class="form__group field">
+                <input type="number" class="form__field" name="cp" id='cp' required ngModel/>
+                <label for="name" class="form__label">Code postal</label>
+            </div>
+    
+            <div class="form__group field">
+                <input type="text" class="form__field" name="ville" id='ville' required ngModel/>
+                <label for="name" class="form__label">Ville</label>
+            </div>
+        </div>
+    
+        <div class="tile" id="adress">
+            <div class="form__group field">
+                <input type="tel" class="form__field" placeholder="Prénom" name="prenom" id='prenom' required ngModel/>
+                <label for="name" class="form__label">Numéro de téléphone</label>
+            </div>
+    
+            <div class="form__group field">
+                <input type="text" class="form__field" placeholder="Prénom" name="prenom" id='prenom' required ngModel/>
+                <label for="name" class="form__label">Mail</label>
+            </div>
+        </div>
+        <button class="button is-fullwidth is-outlined is-white" style="margin-top: 3rem;" (click)="step2(f)">SUIVANT</button>
+    </ng-container>
 
-    <div class="buttons">
-        <button class="button is-primary is-light">Sauvegarder</button>
-        <button class="button is-link is-light">Link</button>
-      </div>
+    <ng-container *ngIf="step === 2" data-aos="fade-in">
+        <div class="form__group field">
+            <h3 class="insc-valid">Es-tu véhiculé ?</h3>
+            <label class="insc-label">
+                <input type="radio" name="vehicule"/>
+                <i></i>
+                <span>Oui</span>
+            </label>
+            <label class="insc-label">
+                <input type="radio" name="vehicule"/>
+                <i></i>
+                <span>Non</span>
+            </label>
+        </div>
+
+        <div class="form__group field">
+            <h3 class="insc-valid">L'inscription ne sera validée qu'à la réception des 20 euros. Je paye en</h3>
+            <label class="insc-label">
+                <input type="radio" name="paiement"/>
+                <i></i>
+                <span>Chèque (à l'ordre "aimer7agir")</span>
+            </label>
+            <label class="insc-label">
+                <input type="radio" name="paiement"/>
+                <i></i>
+                <span>Espèce</span>
+            </label>
+        </div>
+
+        <div class="form__group field">
+            <h3 class="insc-valid">J'autorise la diffusion de photos me concernant sur les réseaux sociaux*</h3>
+            <label class="insc-label">
+                <input type="radio" name="paiement"/>
+                <i></i>
+                <span>Oui</span>
+            </label>
+            <label class="insc-label">
+                <input type="radio" name="paiement"/>
+                <i></i>
+                <span>Non</span>
+            </label>
+            <h5 class="subtitle" style="font-size: 12px;">* : Ne t'inquiète pas, nous t'enverrons quand même la photo avant publication pour que tu valides une seconde fois, il s'agit ici plutôt des photos de groupe</h5>
+        </div>
+
+        <button class="button is-white" *ngIf="step > 1" (click)="step = step - 1">PRECEDENT</button>
+        <button class="button is-white" *ngIf="step > 1" (click)="step = step + 1">SUIVANT</button>
+    </ng-container>
+
+    <ng-container *ngIf="step === 3">
+        <div class="form__group field" style="margin-top: 2rem;">
+            <input type="text" class="form__field" placeholder="Prénom" name="prenom" id='prenom' required ngModel/>
+            <label for="name" class="form__label">Souffres-tu d'une maladie/allergie (médicament, alimentaire..)</label>
+        </div>
+        <div class="form__group field" style="margin-top: 2rem;">
+            <span style="font-family: 'poppins';" class="tag is-danger is-light is-large">Si je suis mineur, il faut nécessairement l'autorisation du responsable légale</span>
+            <button class="button">
+                <span class="icon">
+                    <i class="fas fa-cloud-download-alt"></i>
+                </span>
+                <span>Télécharger l'autorisation</span>
+              </button>
+        </div>
+        <button class="button is-white" *ngIf="step > 1" (click)="step = step - 1">PRECEDENT</button>
+        <button class="button is-primary" *ngIf="step > 1" (click)="step = step + 1">VALIDER</button>
+    </ng-container>
+
+    <!-- BUTTON INSCRIPTION -->
+    
+    
 </form>
