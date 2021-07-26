@@ -1,5 +1,5 @@
 form {
-    margin: 3em 20em 15em 20em;
+    margin: 5em 20em 15em 20em;
     
     label {
         font-weight: 400;
@@ -7,10 +7,7 @@ form {
 }
 
 .insc-title {
-    display: flex;
-    justify-content: start;
-    padding-top: 3em;
-    margin-left: 7rem;
+    visibility: hidden;
 }
 
 #adress {
@@ -25,7 +22,7 @@ form {
 $primary: #EAE8DB;
 $secondary: #EAD2BD;
 $white: #fff;
-$gray: #3d3d3d;
+$gray: black;
 
 .form__group {
     position: relative;
@@ -36,12 +33,13 @@ $gray: #3d3d3d;
   
   .form__field {
     font-family: 'poppins';
+    font-weight: bold;
     width: 100%;
     border: 0;
-    border-bottom: 2px solid $gray;
+    border-bottom: 2px solid white;
     outline: 0;
     font-size: 1.3rem;
-    color: $white;
+    color: white;
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
@@ -63,7 +61,7 @@ $gray: #3d3d3d;
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: $gray;
+    color: white;
     font-family: 'poppins';
   }
   
@@ -86,17 +84,6 @@ $gray: #3d3d3d;
   /* reset input */
   .form__field{
     &:required,&:invalid { box-shadow:none; }
-  }
-  /* demo */
-  body {
-    font-family: 'Poppins', sans-serif; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-size: 1.5rem;
-    background-color:#222222;
   }
 
   /* Chrome, Safari, Edge, Opera */
@@ -199,13 +186,13 @@ input[type=number] {
       right: 30px;
     }
     border: {
-      left: 3px solid #fff;
-      bottom: 3px solid #fff;
+      bottom: 1px solid #fff;
     }
     text-transform: uppercase;
     margin-bottom: 1.5em;
-    letter-spacing: 3px;
+    // letter-spacing: 3px;
     font-weight: 600;
+    color: white;
   }
 
   
@@ -236,10 +223,11 @@ input[type=number] {
       text-transform: uppercase;
       letter-spacing: 3px;
       font-size: .9em;
+      color: white;
     }
     
     > input:checked + i {
-        background: #2D3641;
+        background: white;
     }
     
     &:hover {
@@ -295,4 +283,59 @@ input[type=number] {
 .btn-hover.color-5 {
     background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
     box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.minor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

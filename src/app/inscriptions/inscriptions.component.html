@@ -19,42 +19,42 @@ data-aos-anchor-placement="top-center">
         
             <div class="form__group field">
                 <input type="input" class="form__field" placeholder="Prénom" name="prenom" id='prenom' required ngModel/>
-                <label for="name" class="form__label">Prénom</label>
+                <label for="prenom" class="form__label">Prénom</label>
             </div>
         </div>
         
     
         <div class="form__group field">
             <input type="date" class="form__field" placeholder="Date de naissance" name="birthdate" id='birthdate' required ngModel/>
-            <label for="name" class="form__label">Date de Naissance</label>
+            <label for="birthdate" class="form__label">Date de Naissance</label>
         </div>
     
         <div class="form__group field" id="adress">
-            <input type="input" class="form__field" name="adresse" id='adresse' required ngModel/>
-            <label for="name" class="form__label">Adresse</label>
+            <input type="input" class="form__field" placeholder="Adresse" name="adresse" id='adresse' required ngModel/>
+            <label for="adresse" class="form__label">Adresse</label>
         </div>
     
         <div class="tile">
             <div class="form__group field">
-                <input type="number" class="form__field" name="cp" id='cp' required ngModel/>
-                <label for="name" class="form__label">Code postal</label>
+                <input type="number" class="form__field" placeholder="cp" name="cp" id='cp' required ngModel/>
+                <label for="cp" class="form__label">Code postal</label>
             </div>
     
             <div class="form__group field">
-                <input type="text" class="form__field" name="ville" id='ville' required ngModel/>
-                <label for="name" class="form__label">Ville</label>
+                <input type="text" class="form__field" placeholder="ville" name="ville" id='ville' required ngModel/>
+                <label for="ville" class="form__label">Ville</label>
             </div>
         </div>
     
         <div class="tile" id="adress">
             <div class="form__group field">
-                <input type="tel" class="form__field" placeholder="Prénom" name="prenom" id='prenom' required ngModel/>
-                <label for="name" class="form__label">Numéro de téléphone</label>
+                <input type="tel" class="form__field" placeholder="Tel" name="tel" id='tel' required ngModel/>
+                <label for="tel" class="form__label">Numéro de téléphone</label>
             </div>
     
             <div class="form__group field">
-                <input type="text" class="form__field" placeholder="Prénom" name="prenom" id='prenom' required ngModel/>
-                <label for="name" class="form__label">Mail</label>
+                <input type="text" class="form__field" placeholder="Mail" name="mail" id='mail' required ngModel/>
+                <label for="mail" class="form__label">Mail</label>
             </div>
         </div>
         <div class="next-button">
@@ -95,45 +95,44 @@ data-aos-anchor-placement="top-center">
         <div class="form__group field">
             <h3 class="insc-valid">J'autorise la diffusion de photos me concernant sur les réseaux sociaux*</h3>
             <label class="insc-label">
-                <input type="radio" name="paiement"/>
+                <input type="radio" name="autorisation"/>
                 <i></i>
                 <span>Oui</span>
             </label>
             <label class="insc-label">
-                <input type="radio" name="paiement"/>
+                <input type="radio" name="autorisation"/>
                 <i></i>
                 <span>Non</span>
             </label>
-            <h5 class="subtitle" style="font-size: 12px;">* : Ne t'inquiète pas, nous t'enverrons quand même la photo avant publication pour que tu valides une seconde fois, il s'agit ici plutôt des photos de groupe</h5>
+            <h5 class="subtitle" style="font-size: 12px; color: white;">* : Ne t'inquiète pas, nous t'enverrons quand même la photo avant publication pour que tu valides une seconde fois, il s'agit ici plutôt des photos de groupe</h5>
         </div>
 
-        <div class="next-button">
-            <button (click)="step = step - 1" class="btn-hover color-11">PRÉCÉDENT</button>
-            <button (click)="step = step + 1" class="btn-hover color-8">SUIVANT</button>
-        </div>
-    </ng-container>
-
-    <ng-container *ngIf="step === 3">
         <div class="form__group field" style="margin-top: 2rem;">
-            <input type="text" class="form__field" placeholder="Prénom" name="prenom" id='prenom' required ngModel/>
-            <label for="name" class="form__label">Souffres-tu d'une maladie/allergie (médicament, alimentaire..)</label>
-        </div>
-        <div class="form__group field" style="margin-top: 2rem;">
-            <span style="font-family: 'poppins';" class="tag is-danger is-light is-large">Si je suis mineur, il faut nécessairement l'autorisation du responsable légale</span>
-            <button class="button">
-                <span class="icon">
-                    <i class="fas fa-cloud-download-alt"></i>
-                </span>
-                <span>Télécharger l'autorisation</span>
-              </button>
+            <input type="text" class="form__field" placeholder="maladie" name="maladie" id='maladie' required ngModel/>
+            <label for="maladie" class="form__label">Souffres-tu d'une maladie/allergie (médicament, alimentaire..)</label>
         </div>
         <div class="next-button">
             <button (click)="step = step - 1" class="btn-hover color-11">PRÉCÉDENT</button>
-            <button (click)="step = step + 1" class="btn-hover color-5">VALIDER</button>
+            <button (click)="openModal()" class="btn-hover color-8">SUIVANT</button>
         </div>
-        
-    </ng-container>
 
+        <!-- The Modal -->
+        <div id="modal-valid" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="minor">
+                <span style="font-family: 'poppins';" class="tag is-danger is-light is-large">Si je suis mineur, il faut nécessairement l'autorisation du responsable légale</span>
+                <button class="button is-danger is-rounded">Télécharger l'attestation</button>
+            </div>
+            <div class="next-button" style="margin-top: 2em;">
+                <button (click)="closeModal()" class="btn-hover color-11">ANNULER</button>
+                <button (click)="step = step + 1" class="btn-hover color-5">VALIDER L'INSCRIPTION</button>
+            </div>
+            </div>
+        </div>
+    </ng-container>
     <!-- BUTTON INSCRIPTION -->
     
     
