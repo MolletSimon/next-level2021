@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,8 +8,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { InscriptionsComponent } from './inscriptions/inscriptions.component';
 import { FormsModule } from '@angular/forms';
 import * as firebase from "firebase/app";
+import {AngularFireAnalyticsModule} from '@angular/fire/analytics';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { ToastrModule } from 'ngx-toastr';
 
 
 const config = {
@@ -32,7 +35,10 @@ const config = {
     BrowserModule,
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule,
+    AngularFireAnalyticsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     FormsModule
   ],
   providers: [],

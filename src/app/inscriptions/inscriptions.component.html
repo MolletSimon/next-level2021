@@ -10,97 +10,98 @@ data-aos-easing="ease-in-out"
 data-aos-mirror="true"
 data-aos-once="true"
 data-aos-anchor-placement="top-center">
-    <ng-container *ngIf="step===1" >
+    <div data-aos="fade-in" id="step1">
         <div class="tile">
             <div class="form__group field">
-                <input type="input" class="form__field" placeholder="Nom" name="name" id='name' required ngModel/>
-                <label for="name" class="form__label">Nom</label>
+                <input type="input" class="form__field" placeholder="Nom" name="nom" id='name' required ngModel/>
+                <label for="name" class="form__label">Nom <span class="red">*</span></label>
             </div>
         
             <div class="form__group field">
                 <input type="input" class="form__field" placeholder="Prénom" name="prenom" id='prenom' required ngModel/>
-                <label for="prenom" class="form__label">Prénom</label>
+                <label for="prenom" class="form__label">Prénom <span class="red">*</span></label>
             </div>
         </div>
         
     
         <div class="form__group field">
-            <input type="date" class="form__field" placeholder="Date de naissance" name="birthdate" id='birthdate' required ngModel/>
-            <label for="birthdate" class="form__label">Date de Naissance</label>
+            <input type="date" class="form__field" placeholder="Date de naissance" name="date-de-naissance" id='birthdate' required ngModel/>
+            <label for="birthdate" class="form__label">Date de Naissance <span class="red">*</span></label>
         </div>
     
         <div class="form__group field" id="adress">
             <input type="input" class="form__field" placeholder="Adresse" name="adresse" id='adresse' required ngModel/>
-            <label for="adresse" class="form__label">Adresse</label>
+            <label for="adresse" class="form__label">Adresse <span class="red">*</span></label>
         </div>
     
         <div class="tile">
             <div class="form__group field">
                 <input type="number" class="form__field" placeholder="cp" name="cp" id='cp' required ngModel/>
-                <label for="cp" class="form__label">Code postal</label>
+                <label for="cp" class="form__label">Code postal <span class="red">*</span></label>
             </div>
     
             <div class="form__group field">
                 <input type="text" class="form__field" placeholder="ville" name="ville" id='ville' required ngModel/>
-                <label for="ville" class="form__label">Ville</label>
+                <label for="ville" class="form__label">Ville <span class="red">*</span></label>
             </div>
         </div>
     
         <div class="tile" id="adress">
             <div class="form__group field">
                 <input type="tel" class="form__field" placeholder="Tel" name="tel" id='tel' required ngModel/>
-                <label for="tel" class="form__label">Numéro de téléphone</label>
+                <label for="tel" class="form__label">Numéro de téléphone <span class="red">*</span></label>
             </div>
     
             <div class="form__group field">
                 <input type="text" class="form__field" placeholder="Mail" name="mail" id='mail' required ngModel/>
-                <label for="mail" class="form__label">Mail</label>
+                <label for="mail" class="form__label">Mail <span class="red">*</span></label>
             </div>
         </div>
+        <span class="red">* : Champs obligatoires</span>
         <div class="next-button">
-            <button (click)="step = step + 1" class="btn-hover color-8">SUIVANT</button>
+            <button (click)="next()" type="button" class="btn-hover color-8">SUIVANT</button>
         </div>
         <!-- <button class="button is-fullwidth is-outlined is-white" style="margin-top: 3rem;" (click)="step2(f)">SUIVANT</button> -->
-    </ng-container>
+    </div>
 
-    <ng-container *ngIf="step === 2" data-aos="fade-in">
+    <div data-aos="fade-in" id="step2">
         <div class="form__group field">
-            <h3 class="insc-valid">Es-tu véhiculé ?</h3>
+            <h3 class="insc-valid">Es-tu véhiculé ? <span class="red">*</span></h3>
             <label class="insc-label">
-                <input type="radio" name="vehicule"/>
+                <input type="radio" name="vehiculé" value="Oui" ngModel required/>
                 <i></i>
                 <span>Oui</span>
             </label>
             <label class="insc-label">
-                <input type="radio" name="vehicule"/>
+                <input type="radio" name="vehiculé" value="Non" ngModel required/>
                 <i></i>
                 <span>Non</span>
             </label>
         </div>
 
         <div class="form__group field">
-            <h3 class="insc-valid">L'inscription ne sera validée qu'à la réception des 20 euros. Je paye en</h3>
+            <h3 class="insc-valid">L'inscription ne sera validée qu'à la réception des 20 euros. Je paye en <span class="red">*</span></h3>
             <label class="insc-label">
-                <input type="radio" name="paiement"/>
+                <input type="radio" name="paiement" value="Chèque" ngModel required/>
                 <i></i>
                 <span>Chèque (à l'ordre "aimer7agir")</span>
             </label>
             <label class="insc-label">
-                <input type="radio" name="paiement"/>
+                <input type="radio" name="paiement" value="Espèces" ngModel required/>
                 <i></i>
                 <span>Espèce</span>
             </label>
         </div>
 
         <div class="form__group field">
-            <h3 class="insc-valid">J'autorise la diffusion de photos me concernant sur les réseaux sociaux*</h3>
+            <h3 class="insc-valid">J'autorise la diffusion de photos me concernant sur les réseaux sociaux* <span class="red">*</span></h3>
             <label class="insc-label">
-                <input type="radio" name="autorisation"/>
+                <input type="radio" name="autorisation-photo" value="Oui" ngModel required/>
                 <i></i>
                 <span>Oui</span>
             </label>
             <label class="insc-label">
-                <input type="radio" name="autorisation"/>
+                <input type="radio" name="autorisation-photo" value="Non" ngModel required/>
                 <i></i>
                 <span>Non</span>
             </label>
@@ -108,12 +109,12 @@ data-aos-anchor-placement="top-center">
         </div>
 
         <div class="form__group field" style="margin-top: 2rem;">
-            <input type="text" class="form__field" placeholder="maladie" name="maladie" id='maladie' required ngModel/>
+            <input type="text" class="form__field" placeholder="maladie" name="maladie" id='maladie' ngModel/>
             <label for="maladie" class="form__label">Souffres-tu d'une maladie/allergie (médicament, alimentaire..)</label>
         </div>
         <div class="next-button">
-            <button (click)="step = step - 1" class="btn-hover color-11">PRÉCÉDENT</button>
-            <button (click)="openModal()" class="btn-hover color-8">SUIVANT</button>
+            <button (click)="back()" type="button" class="btn-hover color-11">PRÉCÉDENT</button>
+            <button (click)="openModal()" type="button" class="btn-hover color-8">SUIVANT</button>
         </div>
 
         <!-- The Modal -->
@@ -121,18 +122,22 @@ data-aos-anchor-placement="top-center">
 
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="minor">
-                <span style="font-family: 'poppins';" class="tag is-danger is-light is-large">Si je suis mineur, il faut nécessairement l'autorisation du responsable légale</span>
-                <button class="button is-danger is-rounded">Télécharger l'attestation</button>
+            <div class="lds-roller" *ngIf="loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div *ngIf="!loader">
+                <span class="close">&times;</span>
+                <div class="minor">
+                    <span style="font-family: 'poppins';" class="tag is-danger is-light is-large">Si je suis mineur, il faut nécessairement l'autorisation du responsable légale</span>
+                    <button class="button is-danger is-rounded">Télécharger l'attestation</button>
+                </div>
+                <div class="next-button" style="margin-top: 2em;">
+                    <button (click)="closeModal()" type="button" class="btn-hover color-11">ANNULER</button>
+                    <button type="submit" class="btn-hover color-5">VALIDER L'INSCRIPTION</button>
+                </div>
+                </div>
             </div>
-            <div class="next-button" style="margin-top: 2em;">
-                <button (click)="closeModal()" class="btn-hover color-11">ANNULER</button>
-                <button (click)="step = step + 1" class="btn-hover color-5">VALIDER L'INSCRIPTION</button>
-            </div>
-            </div>
+            
         </div>
-    </ng-container>
+    </div>
     <!-- BUTTON INSCRIPTION -->
     
     

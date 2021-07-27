@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { User } from '../models/user';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-inscriptions',
@@ -8,24 +10,53 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./inscriptions.component.scss']
 })
 export class InscriptionsComponent implements OnInit {
-
+  loader = false;
   step = 1;
-  public user: any;
-  constructor(private dB: AngularFirestore) { }
-
-  ngOnInit(): void {
+  users: any[] = [];
+  constructor(private dB: AngularFirestore, private toastr: ToastrService) { 
   }
 
-  saveForm(f: NgForm) {
-    this.dB.collection('inscrits').add({
-      nom: f.value.nom,
-      prenom: f.value.prenom
+  ngOnInit(): void {
+    this.dB.collection('inscrits').get().subscribe(result => {
+      result.forEach(doc => this.users.push(doc.data()));
+      console.log(this.users)
     })
   }
 
-  step2(f: NgForm) {
-    this.user = f.value;
-    this.step++;
+  saveForm(f: NgForm) {
+    if(f.invalid) {
+      this.toastr.error('Vous devez saisir tous les champs obligatoires !', 'Attention');
+      this.closeModal();
+    } else {
+
+      
+      this.loader = true;
+      console.log(f.value);
+      this.dB.collection('inscrits').add(f.value)
+        .then(res => {
+          this.toastr.success("Votre inscription a bien été prise en compte !", "Félicitations");
+          this.closeModal();
+          this.loader = false;
+        })
+        .catch(err => {
+          this.toastr.error("Une erreur s'est produite ! Veuillez réessayer ou contacter l'administrateur", "Aie aie aie")
+        })
+    }
+    
+  }
+
+  next() {
+    let step1 = document.getElementById('step1') as HTMLElement
+    let step2 = document.getElementById('step2') as HTMLElement
+    step1.style.display = 'none';
+    step2.style.display = 'block';
+  }
+
+  back() {
+    let step1 = document.getElementById('step1') as HTMLElement
+    let step2 = document.getElementById('step2') as HTMLElement
+    step1.style.display = 'block';
+    step2.style.display = 'none';
   }
 
   openModal() {
