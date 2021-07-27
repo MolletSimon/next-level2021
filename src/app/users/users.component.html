@@ -1,1 +1,55 @@
-<h1>EHO</h1>
+<div class="form" *ngIf="!auth">
+    <form #f="ngForm" (ngSubmit)="authenticate(f)">
+        <div class="field">
+            <p class="control has-icons-left">
+                <input class="input" type="password" placeholder="Mot de passe" name="pass" ngModel>
+                <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+                </span>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control">
+                <button class="button is-success" type="submit">
+                Dévérouiller
+                </button>
+            </p>
+        </div>
+    </form>
+</div>
+
+<div *ngIf="auth && users.length > 1" class="list-users" >
+    <h1 class="title has-text-centered">Liste des inscrits</h1>
+    <table class="table is-striped is-hoverable" id="list" #content>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Adresse</th>
+                <th>Date de naissance</th>
+                <th>Mail</th>
+                <th>Numéro de téléphone</th>
+                <th>Véhiculé</th>
+                <th>Paiement</th>
+                <th>Soucis Santé</th>
+                <th>Autorisation photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.nom}}</td>
+                <td>{{user.prenom}}</td>
+                <td>{{user.adresse}} {{user.cp}} {{user.ville}}</td>
+                <td>{{user['date-de-naissance']}}</td>
+                <td>{{user.mail}}</td>
+                <td>{{user.tel}}</td>
+                <td>{{user['vehiculé']}}</td>
+                <td>{{user.paiement}}</td>
+                <td>{{user.maladie}}</td>
+                <td>{{user['autorisation-photo']}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="button is-primary is-rounded" (click)="dlpdf()">Télécharger au format PDF</button>
+</div>

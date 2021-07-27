@@ -12,6 +12,8 @@ import {AngularFireAnalyticsModule} from '@angular/fire/analytics';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ToastrModule } from 'ngx-toastr';
+import { PageComponent } from './page/page.component';
+import { UsersComponent } from './users/users.component';
 
 
 const config = {
@@ -29,7 +31,9 @@ const config = {
   declarations: [
     AppComponent,
     NavbarComponent,
-    InscriptionsComponent
+    InscriptionsComponent,
+    PageComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
