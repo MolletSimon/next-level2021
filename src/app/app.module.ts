@@ -14,6 +14,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ToastrModule } from 'ngx-toastr';
 import { PageComponent } from './page/page.component';
 import { UsersComponent } from './users/users.component';
+import { ProgrammeComponent } from './programme/programme.component';
 
 
 const config = {
@@ -33,7 +34,8 @@ const config = {
     NavbarComponent,
     InscriptionsComponent,
     PageComponent,
-    UsersComponent
+    UsersComponent,
+    ProgrammeComponent
   ],
   imports: [
     BrowserModule,

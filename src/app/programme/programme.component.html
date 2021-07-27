@@ -1,0 +1,34 @@
+<div class="content">
+    <img src="../../../assets/images/GIF2.gif" alt="" id="gif">
+    <div class="prog">
+        <div class="tabs is-fullwidth">
+            <ul>
+                <li [ngClass]="{'is-active' : tabs == 'v'}"><a (click)="tabs = 'v'">Vendredi</a></li>
+                <li [ngClass]="{'is-active' : tabs == 's'}"><a (click)="tabs = 's'">Samedi</a></li>
+                <li [ngClass]="{'is-active' : tabs == 'd'}"><a (click)="tabs = 'd'">Dimanche</a></li>
+            </ul>
+        </div>
+        <div class="day" *ngIf="tabs == 'v'" data-aos="fade-in" data-aos-duration="1000">
+            <span>17h00 : Départ de l'église Ciel Ouvert</span>
+            <span>18h00 : Installation</span>
+            <span>20h00 : Repas</span>
+            <span>21h30 : Réunion</span>
+        </div>
+        <div class="day" *ngIf="tabs == 's'" data-aos="fade-in" data-aos-duration="1000">
+            <span>7h00 : Prière</span>
+            <span>8h00 : Petit déj'</span>
+            <span>10h00 : Réunion</span>
+            <span>12h30 : Repas</span>
+            <span>14h00 : Interville</span>
+            <span>19h30 : Repas</span>
+            <span>21h00 : Réunion</span>
+        </div>
+        <div class="day" *ngIf="tabs == 'd'" data-aos="fade-in" data-aos-duration="1000">
+            <span>7h00 : Prière</span>
+            <span>8h00 : Petit déj'</span>
+            <span>10h00 : Réunion</span>
+            <span>12h30 : Repas</span>
+            <span>14h00 : Rangement</span>
+        </div>
+    </div>
+</div>
