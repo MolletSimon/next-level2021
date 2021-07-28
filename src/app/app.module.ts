@@ -15,6 +15,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { PageComponent } from './page/page.component';
 import { UsersComponent } from './users/users.component';
 import { ProgrammeComponent } from './programme/programme.component';
+import { ChecklistComponent } from './checklist/checklist.component';
 
 
 const config = {
@@ -35,7 +36,8 @@ const config = {
     InscriptionsComponent,
     PageComponent,
     UsersComponent,
-    ProgrammeComponent
+    ProgrammeComponent,
+    ChecklistComponent
   ],
   imports: [
     BrowserModule,
