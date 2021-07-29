@@ -13,7 +13,7 @@ $tablet-width: 768px;
 $desktop-width: 1024px;
 
 /* COLOR HEX */
-$cadet: #e5ff00;
+$cadet: #353535;
 $maximum-blue: #5ea5b8ff;
 $columbia-blue: #c0d6dfff;
 $platinum: #eaeaeaff;
@@ -56,22 +56,9 @@ $body-text-color: $nero;
     }
 }
 
-html {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
-body {
-    background-color: $body-background-color;
-    font-family: $base-font-family;
-    font-size: $font-size-small;
-    color: $body-text-color;
-    line-height: 1.5;
-}
 .dl-blurbs {
     display: grid;
+    transform: scale(0.8);
     @include tablet-up {
         grid-template-columns: repeat(2, 1fr);
         gap: 2vw;
@@ -115,4 +102,5 @@ dt::before {
 dd {
     margin-left: 5vw;
     margin-bottom: 2vh;
+    font-weight: 500;
 }
