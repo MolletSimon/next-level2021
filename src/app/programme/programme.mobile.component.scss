@@ -1,0 +1,30 @@
+.tabs {
+    a {
+        border-bottom-color: #100F0D;
+    }
+    .is-active {
+        a {
+            color: white !important;
+            border-bottom-color: white !important; 
+        }
+    }
+
+    ul {
+        margin-left: 0;
+    }
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    margin: 3em 0 0 2em;
+    justify-content: center;
+    color: white;
+    letter-spacing: 1px;
+
+    span {
+        margin-bottom: 15px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+}

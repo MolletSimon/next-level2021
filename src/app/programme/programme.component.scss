@@ -1,4 +1,7 @@
 $tabs-link-active-color : white !important;
+
+@import './programme.mobile.component.scss';
+
 @media screen and (min-width: 426px) {
     .content {
         display: flex;
