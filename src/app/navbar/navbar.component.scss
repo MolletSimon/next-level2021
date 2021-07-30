@@ -1,52 +1,57 @@
-.navbar {
-    background-color: transparent !important;
-    margin-right: 3em;
-    position:sticky;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-    font-family: termina;
-}
+@import './navbar.mobile.component.scss';
 
-.navbar-menu {
-    margin-top: 2em;
-    display: flex !important;
-}
-
-.navbar-item {
-    margin-right: 3em;
-    &:hover {
+@media screen and (min-width: 426px) {
+    .navbar {
         background-color: transparent !important;
-        color: rgb(68, 68, 68);
+        margin-right: 3em;
+        position:sticky;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+        font-family: termina;
+        display: flex;
     }
-}
-
-div.borderXwidth a:before, div.borderXwidth a:after
-{
-    position: absolute;
-    opacity: 0;
-    width: 0%;
-    height: 3px;
-    content: '';
-    background: rgb(95, 95, 95);
-    transition: all 0.5s;
-}
-
-// div.borderXwidth a:before
-// {
-//     left: 0px;
-//     top: 0px;
-// }
-
-div.borderXwidth a:after
-{
-    right: 0px;
-    bottom: 0px;
-}
-
- div.borderXwidth a:hover:after
-{
-    opacity: 1;
-    width: 100%;
+    
+    .navbar-menu {
+        margin-top: 2em;
+        display: flex !important;
+    }
+    
+    .navbar-item {
+        margin-right: 3em;
+        &:hover {
+            background-color: transparent !important;
+            color: rgb(68, 68, 68);
+        }
+    }
+    
+    div.borderXwidth a:before, div.borderXwidth a:after
+    {
+        position: absolute;
+        opacity: 0;
+        width: 0%;
+        height: 3px;
+        content: '';
+        background: rgb(95, 95, 95);
+        transition: all 0.5s;
+    }
+    
+    // div.borderXwidth a:before
+    // {
+    //     left: 0px;
+    //     top: 0px;
+    // }
+    
+    div.borderXwidth a:after
+    {
+        right: 0px;
+        bottom: 0px;
+    }
+    
+     div.borderXwidth a:hover:after
+    {
+        opacity: 1;
+        width: 100%;
+    }
 }

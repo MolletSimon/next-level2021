@@ -1,4 +1,5 @@
 <div class="insc-title">
+    <div class="hidden"></div>
     <h1 class="title">Inscriptions</h1>
 </div>
 
@@ -17,7 +18,7 @@ data-aos-anchor-placement="top-center">
                 <label for="name" class="form__label">Nom <span class="red">*</span></label>
             </div>
         
-            <div class="form__group field">
+            <div class="form__group field" id="prenom-group">
                 <input type="input" class="form__field" placeholder="Prénom" name="prenom" id='prenom' required ngModel/>
                 <label for="prenom" class="form__label">Prénom <span class="red">*</span></label>
             </div>
@@ -57,7 +58,10 @@ data-aos-anchor-placement="top-center">
                 <label for="mail" class="form__label">Mail <span class="red">*</span></label>
             </div>
         </div>
-        <span class="red">* : Champs obligatoires</span>
+        <div class="required">
+            <span class="red">* : Champs obligatoires</span>
+        </div>
+        
         <div class="next-button">
             <button (click)="next()" type="button" class="btn-hover color-8">SUIVANT</button>
         </div>
@@ -108,9 +112,9 @@ data-aos-anchor-placement="top-center">
             <h5 class="subtitle" style="font-size: 12px; color: white;">* : Ne t'inquiète pas, nous t'enverrons quand même la photo avant publication pour que tu valides une seconde fois, il s'agit ici plutôt des photos de groupe</h5>
         </div>
 
-        <div class="form__group field" style="margin-top: 2rem;">
+        <div class="form__group field" style="margin-top: 2rem;" id="maladie-input">
             <input type="text" class="form__field" placeholder="maladie" name="maladie" id='maladie' ngModel/>
-            <label for="maladie" class="form__label">Souffres-tu d'une maladie/allergie (médicament, alimentaire..)</label>
+            <label for="maladie" class="form__label">Souffres-tu d'une maladie/allergie</label>
         </div>
         <div class="next-button">
             <button (click)="back()" type="button" class="btn-hover color-11">PRÉCÉDENT</button>

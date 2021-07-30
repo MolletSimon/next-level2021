@@ -1,41 +1,43 @@
 $tabs-link-active-color : white !important;
-.content {
-    display: flex;
-}
-
-.prog {
-    width: 100%;
-}
-
-.tabs {
-    a {
-        border-bottom-color: #100F0D;
+@media screen and (min-width: 426px) {
+    .content {
+        display: flex;
     }
-    .is-active {
+    
+    .prog {
+        width: 100%;
+    }
+    
+    .tabs {
         a {
-            color: white !important;
-            border-bottom-color: white !important; 
+            border-bottom-color: #100F0D;
+        }
+        .is-active {
+            a {
+                color: white !important;
+                border-bottom-color: white !important; 
+            }
+        }
+        
+    }
+    
+    .day {
+        display: flex;
+        flex-direction: column;
+        margin: 3em 0 0 4em;
+        justify-content: center;
+        color: white;
+        letter-spacing: 1px;
+        height: 70%;
+        
+        span {
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-size: 35px;
         }
     }
     
-}
-
-.day {
-    display: flex;
-    flex-direction: column;
-    margin: 3em 0 0 4em;
-    justify-content: center;
-    color: white;
-    letter-spacing: 1px;
-    height: 70%;
-
-    span {
-        margin-bottom: 15px;
-        font-weight: 600;
-        font-size: 35px;
+    #gif {
+        max-height: 100vh;
     }
-}
-
-#gif {
-    max-height: 100vh;
 }

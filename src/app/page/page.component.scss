@@ -1,21 +1,33 @@
 @import '~ngx-toastr/toastr';
 
 .header {
-    background: url('../../assets/images/Nextlevel2021VF.jpg');
+    background: url('../../assets/images/mobile.png');
     height: 100vh;
-    background-attachment: fixed;
+    
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.inscriptions {
+    min-height: 100vh;
+    background: url('../../assets/images/mobile-insc.png');
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.inscriptions {
-    min-height: 100vh;
-    background: url('../../assets/images/Version2.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+@media screen and (min-width: 426px) {
+    .header {
+        background: url('../../assets/images/Nextlevel2021VF.jpg');
+        background-attachment: fixed;
+    }
+
+    .inscriptions {
+        background: url('../../assets/images/Version2.jpg');
+        background-attachment: fixed;
+    }
 }
 
 .programme {
