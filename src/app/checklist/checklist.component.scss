@@ -56,9 +56,21 @@ $body-text-color: $nero;
     }
 }
 
+.title-checklist {
+    text-transform: uppercase;
+    padding-top: 2em;
+    font-weight: 600;
+}
+
+@media screen and (min-width:425px) {
+    .title-checklist {
+        display: none;
+    }
+}
+
 .dl-blurbs {
     display: grid;
-    transform: scale(0.8);
+    transform: scale(0.8, 0.93);
     @include tablet-up {
         grid-template-columns: repeat(2, 1fr);
         gap: 2vw;
@@ -104,3 +116,4 @@ dd {
     margin-bottom: 2vh;
     font-weight: 500;
 }
+

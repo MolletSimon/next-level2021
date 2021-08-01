@@ -1,9 +1,8 @@
 @import '~ngx-toastr/toastr';
 
 .header {
-    background: url('../../assets/images/mobile.png');
+    background: url('../../assets/images/Visuelmobile.png');
     height: 100vh;
-    
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
@@ -31,7 +30,6 @@
 }
 
 .programme {
-    min-height: 100vh;
     background-color: #100F0D;
     background-attachment: fixed;
     background-position: center;
