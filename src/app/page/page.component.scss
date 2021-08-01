@@ -1,7 +1,7 @@
 @import '~ngx-toastr/toastr';
 
 .header {
-    background: url('../../assets/images/Visuelmobile.png');
+    background: url('../../assets/images/banner-mobile.png');
     height: 100vh;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -19,12 +19,12 @@
 
 @media screen and (min-width: 426px) {
     .header {
-        background: url('../../assets/images/Nextlevel2021VF.jpg');
+        background: url('../../assets/images/banner.png');
         background-attachment: fixed;
     }
 
     .inscriptions {
-        background: url('../../assets/images/Version2.jpg');
+        background: url('../../assets/images/back-insc.jpg');
         background-attachment: fixed;
     }
 }
@@ -38,8 +38,7 @@
 }
 
 .checklist {
-    min-height: 100vh; 
-    background: url('../../assets/images/contact.jpg');
+    background: url('../../assets/images/checklist-back.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;

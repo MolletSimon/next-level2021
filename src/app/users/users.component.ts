@@ -30,9 +30,22 @@ export class UsersComponent implements OnInit {
 
   getUsers() {
     this.dB.collection('inscrits').get().subscribe(result => {
-      result.forEach(doc => this.users.push(doc.data()));
+      result.forEach(doc => {
+        const data = doc.data() as any;
+        data.id = doc.id;
+        this.users.push(data);
+        
+      });
       console.log(this.users)
     })
+  }
+
+  payed(id: string) {
+    this.dB.collection('inscrits').doc(id).set({
+      payed: true
+    }, {merge:true});
+    this.users = [];
+    this.getUsers();
   }
 
   dlpdf() {

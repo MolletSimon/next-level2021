@@ -31,12 +31,14 @@ export class InscriptionsComponent implements OnInit {
 
       
       this.loader = true;
-      console.log(f.value);
+      f.value.payed = false;
       this.dB.collection('inscrits').add(f.value)
         .then(res => {
           this.toastr.success("Votre inscription a bien été prise en compte !", "Félicitations");
           this.closeModal();
           this.loader = false;
+          f.reset();
+          this.back();
         })
         .catch(err => {
           this.toastr.error("Une erreur s'est produite ! Veuillez réessayer ou contacter l'administrateur", "Aie aie aie")

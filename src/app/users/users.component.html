@@ -18,7 +18,7 @@
     </form>
 </div>
 
-<div *ngIf="auth && users.length > 1" class="list-users" >
+<div *ngIf="auth && users.length > 0" class="list-users" >
     <h1 class="title has-text-centered">Liste des inscrits</h1>
     <table class="table is-striped is-hoverable" id="list" #content>
         <thead>
@@ -33,10 +33,11 @@
                 <th>Paiement</th>
                 <th>Soucis Santé</th>
                 <th>Autorisation photo</th>
+                <th>a payé</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let user of users">
+            <tr *ngFor="let user of users" [ngClass]="{'is-selected' : user.payed}">
                 <td>{{user.nom}}</td>
                 <td>{{user.prenom}}</td>
                 <td>{{user.adresse}} {{user.cp}} {{user.ville}}</td>
@@ -47,6 +48,8 @@
                 <td>{{user.paiement}}</td>
                 <td>{{user.maladie}}</td>
                 <td>{{user['autorisation-photo']}}</td>
+                <td *ngIf="user.payed" class="is-italic">payé</td>
+                <td *ngIf="!user.payed"><button class="button is-warning" (click)="payed(user.id)">A PAYE</button></td>
             </tr>
         </tbody>
     </table>
