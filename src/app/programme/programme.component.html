@@ -1,34 +1,46 @@
 <div class="content">
-    <img src="../../../assets/images/GIF.gif" alt="" id="gif">
-    <div class="prog">
-        <div class="tabs is-fullwidth">
-            <ul>
-                <li [ngClass]="{'is-active' : tabs == 'v'}"><a (click)="tabs = 'v'">Vendredi</a></li>
-                <li [ngClass]="{'is-active' : tabs == 's'}"><a (click)="tabs = 's'">Samedi</a></li>
-                <li [ngClass]="{'is-active' : tabs == 'd'}"><a (click)="tabs = 'd'">Dimanche</a></li>
-            </ul>
-        </div>
-        <div class="day" *ngIf="tabs == 'v'">
-            <span data-aos="fade-in" data-aos-duration="1000">17h00 : Départ de l'église Ciel Ouvert</span>
-            <span data-aos="fade-in" data-aos-duration="1000">18h00 : Installation</span>
-            <span data-aos="fade-in" data-aos-duration="1000">20h00 : Repas</span>
-            <span data-aos="fade-in" data-aos-duration="1000">21h30 : Réunion</span>
-        </div>
-        <div class="day" *ngIf="tabs == 's'">
-            <span data-aos="fade-in" data-aos-duration="1000">7h00 : Prière</span>
-            <span data-aos="fade-in" data-aos-duration="1000">8h00 : Petit déj'</span>
-            <span data-aos="fade-in" data-aos-duration="1000">10h00 : Réunion</span>
-            <span data-aos="fade-in" data-aos-duration="1000">12h30 : Repas</span>
-            <span data-aos="fade-in" data-aos-duration="1000">14h00 : Jeu</span>
-            <span data-aos="fade-in" data-aos-duration="1000">19h30 : Repas</span>
-            <span data-aos="fade-in" data-aos-duration="1000">21h00 : Réunion</span>
-        </div>
-        <div class="day" *ngIf="tabs == 'd'">
-            <span data-aos="fade-in" data-aos-duration="1000">7h00 : Prière</span>
-            <span data-aos="fade-in" data-aos-duration="1000">8h00 : Petit déj'</span>
-            <span data-aos="fade-in" data-aos-duration="1000">10h00 : Réunion</span>
-            <span data-aos="fade-in" data-aos-duration="1000">12h30 : Repas</span>
-            <span data-aos="fade-in" data-aos-duration="1000">14h00 : Rangement</span>
-        </div>
+  <img src="../../../assets/images/GIF.gif" alt="" id="gif" />
+  <div class="prog">
+    <div class="tabs is-fullwidth">
+      <ul>
+        <li [ngClass]="{ 'is-active': tabs == 'v' }">
+          <a (click)="tabs = 'v'">Vendredi 08 Octobre</a>
+        </li>
+        <li [ngClass]="{ 'is-active': tabs == 's' }">
+          <a (click)="tabs = 's'">Samedi 09 Octobre</a>
+        </li>
+        <li [ngClass]="{ 'is-active': tabs == 'd' }">
+          <a (click)="tabs = 'd'"
+            >Dimanche 10 Octobre<span class="ai-star-10"></span
+          ></a>
+        </li>
+      </ul>
     </div>
+    <div class="day" *ngIf="tabs == 'v'">
+      <span data-aos="fade-in" data-aos-duration="1000"
+        >17h00 : Départ de l'église Ciel Ouvert</span
+      >
+      <span data-aos="fade-in" data-aos-duration="1000"
+        >18h00 : Installation</span
+      >
+      <span data-aos="fade-in" data-aos-duration="1000">20h00 : Repas</span>
+      <span data-aos="fade-in" data-aos-duration="1000">21h30 : Réunion</span>
+    </div>
+    <div class="day" *ngIf="tabs == 's'">
+      <span data-aos="fade-in" data-aos-duration="1000">7h00 : Prière</span>
+      <span data-aos="fade-in" data-aos-duration="1000">8h00 : Petit déj'</span>
+      <span data-aos="fade-in" data-aos-duration="1000">10h00 : Réunion</span>
+      <span data-aos="fade-in" data-aos-duration="1000">12h30 : Repas</span>
+      <span data-aos="fade-in" data-aos-duration="1000">14h00 : Jeu</span>
+      <span data-aos="fade-in" data-aos-duration="1000">19h30 : Repas</span>
+      <span data-aos="fade-in" data-aos-duration="1000">21h00 : Réunion</span>
+    </div>
+    <div class="day" *ngIf="tabs == 'd'">
+      <span data-aos="fade-in" data-aos-duration="1000">7h00 : Prière</span>
+      <span data-aos="fade-in" data-aos-duration="1000">8h00 : Petit déj'</span>
+      <span data-aos="fade-in" data-aos-duration="1000">10h00 : Réunion</span>
+      <span data-aos="fade-in" data-aos-duration="1000">12h30 : Repas</span>
+      <span data-aos="fade-in" data-aos-duration="1000">14h00 : Rangement</span>
+    </div>
+  </div>
 </div>

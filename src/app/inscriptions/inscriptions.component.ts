@@ -47,6 +47,13 @@ export class InscriptionsComponent implements OnInit {
     
   }
 
+  start() {
+    let step0 = document.getElementById('step0') as HTMLElement
+    let step1 = document.getElementById('step1') as HTMLElement
+    step0.style.display = 'none';
+    step1.style.display = 'block';
+  }
+  
   next() {
     let step1 = document.getElementById('step1') as HTMLElement
     let step2 = document.getElementById('step2') as HTMLElement
@@ -61,9 +68,9 @@ export class InscriptionsComponent implements OnInit {
     step2.style.display = 'none';
   }
 
-  openModal() {
+  openModal(id: string) {
     let span = document.getElementsByClassName("close")[0] as HTMLElement;
-    let modal = document.getElementById("modal-valid") as HTMLElement;
+    let modal = document.getElementById(id) as HTMLElement;
     modal.style.display = "block";
 
     window.onclick = function(event) {
