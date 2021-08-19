@@ -114,260 +114,207 @@
         >
       </div>
 
-      <!-- The Modal -->
-      <div id="modal-valid" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-          <div class="lds-roller" *ngIf="loader">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-          <div *ngIf="!loader">
-            <span class="close">&times;</span>
-            <div class="minor">
-              <span
-                style="font-family: 'poppins'"
-                class="tag is-danger is-light is-large minor-span"
-                >Si je suis mineur, il faut nécessairement l'autorisation du
-                responsable légale</span
-              >
-              <a
-                href="../../assets/files/autorisation-mineur.pdf"
-                target="_blank"
-                class="button is-danger is-rounded"
-                >Télécharger l'attestation</a
-              >
-            </div>
-            <div class="next-button modal-button" style="margin-top: 2em">
-              <button
-                (click)="closeModal()"
-                type="button"
-                class="btn-hover color-11"
-              >
-                ANNULER
-              </button>
-              <button type="submit" class="btn-hover color-5">
-                VALIDER L'INSCRIPTION
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="form__group field">
-          <input
-            type="text"
-            class="form__field"
-            placeholder="ville"
-            name="ville"
-            id="ville"
-            required
-            ngModel
-          />
-          <label for="ville" class="form__label"
-            >Ville <span class="red">*</span></label
-          >
-        </div>
-      </div>
-
-      <div class="tile" id="adress">
-        <div class="form__group field">
-          <input
-            type="tel"
-            class="form__field"
-            placeholder="Tel"
-            name="tel"
-            id="tel"
-            required
-            ngModel
-          />
-          <label for="tel" class="form__label"
-            >Numéro de téléphone <span class="red">*</span></label
-          >
-        </div>
-
-        <div class="form__group field">
-          <input
-            type="text"
-            class="form__field"
-            placeholder="Mail"
-            name="mail"
-            id="mail"
-            required
-            ngModel
-          />
-          <label for="mail" class="form__label"
-            >Mail <span class="red">*</span></label
-          >
-        </div>
-      </div>
-      <div class="required">
-        <span class="red">* : Champs obligatoires</span>
-      </div>
-
-      <div class="next-button">
-        <button (click)="next()" type="button" class="btn-hover color-8">
-          SUIVANT
-        </button>
-      </div>
-      <!-- <button class="button is-fullwidth is-outlined is-white" style="margin-top: 3rem;" (click)="step2(f)">SUIVANT</button> -->
-    </div>
-
-    <div data-aos="fade-in" id="step2">
       <div class="form__group field">
-        <h3 class="insc-valid">Es-tu véhiculé ? <span class="red">*</span></h3>
-        <label class="insc-label">
-          <input type="radio" name="vehiculé" value="Oui" ngModel required />
-          <i></i>
-          <span>Oui</span>
-        </label>
-        <label class="insc-label">
-          <input type="radio" name="vehiculé" value="Non" ngModel required />
-          <i></i>
-          <span>Non</span>
-        </label>
-      </div>
-
-      <div class="form__group field">
-        <h3 class="insc-valid">
-          L'inscription ne sera validée qu'à la réception des 20 euros. Je paye
-          en
-          <span class="red">*</span>
-        </h3>
-        <label class="insc-label">
-          <input type="radio" name="paiement" value="Chèque" ngModel required />
-          <i></i>
-          <span>Chèque (à l'ordre "aimer7agir")</span>
-        </label>
-        <label class="insc-label">
-          <input
-            type="radio"
-            name="paiement"
-            value="Espèces"
-            ngModel
-            required
-          />
-          <i></i>
-          <span>Espèce</span>
-        </label>
-      </div>
-
-      <div class="form__group field">
-        <h3 class="insc-valid">
-          J'autorise la diffusion de photos me concernant sur les réseaux
-          sociaux*
-          <span class="red">*</span>
-        </h3>
-        <label class="insc-label">
-          <input
-            type="radio"
-            name="autorisation-photo"
-            value="Oui"
-            ngModel
-            required
-          />
-          <i></i>
-          <span>Oui</span>
-        </label>
-        <label class="insc-label">
-          <input
-            type="radio"
-            name="autorisation-photo"
-            value="Non"
-            ngModel
-            required
-          />
-          <i></i>
-          <span>Non</span>
-        </label>
-        <h5 class="subtitle" style="font-size: 12px; color: white">
-          * : Ne t'inquiète pas, nous t'enverrons quand même la photo avant
-          publication pour que tu valides une seconde fois, il s'agit ici plutôt
-          des photos de groupe
-        </h5>
-      </div>
-
-      <div
-        class="form__group field"
-        style="margin-top: 2rem"
-        id="maladie-input"
-      >
         <input
           type="text"
           class="form__field"
-          placeholder="maladie"
-          name="maladie"
-          id="maladie"
+          placeholder="ville"
+          name="ville"
+          id="ville"
+          required
           ngModel
         />
-        <label for="maladie" class="form__label"
-          >Souffres-tu d'une maladie/allergie</label
+        <label for="ville" class="form__label"
+          >Ville <span class="red">*</span></label
         >
       </div>
-      <div class="next-button">
-        <button (click)="back()" type="button" class="btn-hover color-11">
-          PRÉCÉDENT
-        </button>
-        <button
-          (click)="openModal('modal-valid')"
-          type="button"
-          class="btn-hover color-8"
+    </div>
+
+    <div class="tile" id="adress">
+      <div class="form__group field">
+        <input
+          type="tel"
+          class="form__field"
+          placeholder="Tel"
+          name="tel"
+          id="tel"
+          required
+          ngModel
+        />
+        <label for="tel" class="form__label"
+          >Numéro de téléphone <span class="red">*</span></label
         >
-          SUIVANT
-        </button>
       </div>
 
-      <!-- The Modal -->
-      <div id="modal-valid" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-          <div class="lds-roller" *ngIf="loader">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+      <div class="form__group field">
+        <input
+          type="text"
+          class="form__field"
+          placeholder="Mail"
+          name="mail"
+          id="mail"
+          required
+          ngModel
+        />
+        <label for="mail" class="form__label"
+          >Mail <span class="red">*</span></label
+        >
+      </div>
+    </div>
+    <div class="required">
+      <span class="red">* : Champs obligatoires</span>
+    </div>
+
+    <div class="next-button">
+      <button (click)="next()" type="button" class="btn-hover color-8">
+        SUIVANT
+      </button>
+    </div>
+    <!-- <button class="button is-fullwidth is-outlined is-white" style="margin-top: 3rem;" (click)="step2(f)">SUIVANT</button> -->
+  </div>
+
+  <div data-aos="fade-in" id="step2">
+    <div class="form__group field">
+      <h3 class="insc-valid">Es-tu véhiculé ? <span class="red">*</span></h3>
+      <label class="insc-label">
+        <input type="radio" name="vehiculé" value="Oui" ngModel required />
+        <i></i>
+        <span>Oui</span>
+      </label>
+      <label class="insc-label">
+        <input type="radio" name="vehiculé" value="Non" ngModel required />
+        <i></i>
+        <span>Non</span>
+      </label>
+    </div>
+
+    <div class="form__group field">
+      <h3 class="insc-valid">
+        L'inscription ne sera validée qu'à la réception des 20 euros. Je paye en
+        <span class="red">*</span>
+      </h3>
+      <label class="insc-label">
+        <input type="radio" name="paiement" value="Chèque" ngModel required />
+        <i></i>
+        <span>Chèque (à l'ordre "aimer7agir")</span>
+      </label>
+      <label class="insc-label">
+        <input type="radio" name="paiement" value="Espèces" ngModel required />
+        <i></i>
+        <span>Espèce</span>
+      </label>
+    </div>
+
+    <div class="form__group field">
+      <h3 class="insc-valid">
+        J'autorise la diffusion de photos de groupe dans lesquels j'apparais,
+        sur les réseaux sociaux.
+        <span class="red">*</span>
+      </h3>
+      <label class="insc-label">
+        <input
+          type="radio"
+          name="autorisation-photo"
+          value="Oui"
+          ngModel
+          required
+        />
+        <i></i>
+        <span>Oui</span>
+      </label>
+      <label class="insc-label">
+        <input
+          type="radio"
+          name="autorisation-photo"
+          value="Non"
+          ngModel
+          required
+        />
+        <i></i>
+        <span>Non</span>
+      </label>
+    </div>
+
+    <div class="form__group field" style="margin-top: 2rem" id="maladie-input">
+      <input
+        type="text"
+        class="form__field"
+        placeholder="maladie"
+        name="maladie"
+        id="maladie"
+        ngModel
+      />
+      <label for="maladie" class="form__label"
+        >Souffres-tu d'une maladie/allergie</label
+      >
+    </div>
+    <div class="next-button">
+      <button (click)="back()" type="button" class="btn-hover color-11">
+        PRÉCÉDENT
+      </button>
+      <button
+        (click)="openModal('modal-valid')"
+        type="button"
+        class="btn-hover color-8"
+      >
+        SUIVANT
+      </button>
+    </div>
+
+    <!-- The Modal -->
+    <div id="modal-valid" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="lds-roller" *ngIf="loader">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div *ngIf="!loader">
+          <span class="close">&times;</span>
+          <div class="minor">
+            <span
+              style="font-family: 'poppins'"
+              class="tag is-danger is-light is-large"
+              >Si je suis mineur, il faut nécessairement l'autorisation du
+              responsable légale</span
+            >
+            <a
+              href="../../assets/files/autorisation-mineur.pdf"
+              target="_blank"
+              class="button is-danger is-rounded"
+              >Télécharger l'attestation</a
+            >
+
+            <div class="card mt-5">
+              <div class="card-content">
+                <span style="font-family: 'poppins'" class="red"
+                  >Attention ! Le pass sanitaire est obligatoire pour participer
+                  à cet évènement</span
+                >
+              </div>
+            </div>
           </div>
-          <div *ngIf="!loader">
-            <span class="close">&times;</span>
-            <div class="minor">
-              <span
-                style="font-family: 'poppins'"
-                class="tag is-danger is-light is-large"
-                >Si je suis mineur, il faut nécessairement l'autorisation du
-                responsable légale</span
-              >
-              <a
-                href="../../assets/files/autorisation-mineur.pdf"
-                target="_blank"
-                class="button is-danger is-rounded"
-                >Télécharger l'attestation</a
-              >
-            </div>
-            <div class="next-button" style="margin-top: 2em">
-              <button
-                (click)="closeModal()"
-                type="button"
-                class="btn-hover color-11"
-              >
-                ANNULER
-              </button>
-              <button type="submit" class="btn-hover color-5">
-                VALIDER L'INSCRIPTION
-              </button>
-            </div>
+          <div class="next-button" style="margin-top: 2em">
+            <button
+              (click)="closeModal()"
+              type="button"
+              class="btn-hover color-11"
+            >
+              ANNULER
+            </button>
+            <button type="submit" class="btn-hover color-5">
+              VALIDER L'INSCRIPTION
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <!-- BUTTON INSCRIPTION -->
   </div>
+  <!-- BUTTON INSCRIPTION -->
 </form>
