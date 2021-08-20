@@ -1,35 +1,38 @@
 .tabs {
+  a {
+    border-bottom-color: #100f0d;
+  }
+  .is-active {
     a {
-        border-bottom-color: #100F0D;
+      color: white !important;
+      border-bottom-color: white !important;
     }
-    .is-active {
-        a {
-            color: white !important;
-            border-bottom-color: white !important; 
-        }
-    }
+  }
 
-    ul {
-        margin-left: 0;
-    }
+  ul {
+    margin-left: 0;
+  }
 }
 
+.complete-date {
+  display: none;
+}
 .day {
-    display: flex;
-    flex-direction: column;
-    margin: 3em 0 0 2em;
-    justify-content: center;
-    color: white;
-    letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  margin: 3em 0 0 2em;
+  justify-content: center;
+  color: white;
+  letter-spacing: 1px;
 
-    span {
-        margin-bottom: 15px;
-        font-weight: 600;
-        font-size: 20px;
-    }
+  span {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 20px;
+  }
 }
 
 .content {
-    display: flex;
-    flex-direction: column-reverse;
+  display: flex;
+  flex-direction: column-reverse;
 }

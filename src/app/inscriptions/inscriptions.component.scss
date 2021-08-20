@@ -292,6 +292,11 @@ $gray: black;
     height: 70vh;
   }
 
+  .modal-button {
+    display: flex;
+    flex-direction: row !important;
+  }
+
   /* Modal Content/Box */
   .modal-content {
     background-color: #feecf0;

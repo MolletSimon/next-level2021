@@ -1,48 +1,51 @@
-$tabs-link-active-color : white !important;
+$tabs-link-active-color: white !important;
 
-@import './programme.mobile.component.scss';
+@import "./programme.mobile.component.scss";
 
 @media screen and (min-width: 426px) {
-    .content {
-        display: flex;
-        flex-direction: row;
+  .content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .complete-date {
+    display: block;
+  }
+
+  .prog {
+    width: 100%;
+  }
+
+  .tabs {
+    a {
+      border-bottom-color: #100f0d;
     }
-    
-    .prog {
-        width: 100%;
+    .is-active {
+      a {
+        color: white !important;
+        border-bottom-color: white !important;
+      }
     }
-    
-    .tabs {
-        a {
-            border-bottom-color: #100F0D;
-        }
-        .is-active {
-            a {
-                color: white !important;
-                border-bottom-color: white !important; 
-            }
-        }
-        
+  }
+
+  .day {
+    display: flex;
+    flex-direction: column;
+    margin: 3em 0 0 4em;
+    justify-content: center;
+    color: white;
+    letter-spacing: 1px;
+    height: 70%;
+
+    span {
+      margin-bottom: 15px;
+      margin-right: 30px;
+      font-weight: 600;
+      font-size: 30px;
     }
-    
-    .day {
-        display: flex;
-        flex-direction: column;
-        margin: 3em 0 0 4em;
-        justify-content: center;
-        color: white;
-        letter-spacing: 1px;
-        height: 70%;
-        
-        span {
-            margin-bottom: 15px;
-            margin-right: 30px;
-            font-weight: 600;
-            font-size: 30px;
-        }
-    }
-    
-    #gif {
-        max-height: 100vh;
-    }
+  }
+
+  #gif {
+    max-height: 100vh;
+  }
 }

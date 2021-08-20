@@ -98,7 +98,7 @@ input[type="number"] {
 }
 
 .modal-button {
-  flex-direction: column-reverse;
+  flex-direction: column-reverse !important;
   align-items: center;
 
   button {
@@ -194,6 +194,7 @@ form {
 
 .next-button {
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
 
